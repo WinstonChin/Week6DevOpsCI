@@ -1,4 +1,5 @@
 name: First Workflow
+
 on:
   push:
     branches: [main]
@@ -8,13 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     name: myBuild
     steps:
-    - name: Checkout code
-      uses: action/checkout@v6
-    - name: Setup Python
-      uses: actions/setup-python@v6.0.0
-      with:
-        python-version: 3.7.17
-    - name: List content
-      run: |
-        1s
-    
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.7.17"
+
+      - name: List content
+        run: |
+          ls
